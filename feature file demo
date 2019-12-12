@@ -1,14 +1,16 @@
-Feature: Login to Tableau Server
-Scenario: Given login information
-Given that the user is on <site>
-And a  <username> and <password> combination is input
-And the user clicks 'Ok'
-Then I should see <status>
+@Demo
+Feature: Login
+Scenario Outline :Login with parameters
+
+Given that the user is on "<site>"
+When a  "<username>" , "<password>" combination is input
+And the user clicks "Ok"
+Then I should see "<status>"
 
 Examples:
-site                                   |username  | password  | status
-https://mydashboard.prahs.com          |clarkt42  |hatlady    | Welcome
-https://mydashboard.prahs.com          |teaglass  |earlgrey   | Welcome
-https://mydashboard.prahs.com          |          | earlgrey  | specify username
-https://mydashboard.prahs.com          |teaglass  |           | specify password
-https://mydashboard.prahs.com          |clarkt42  | earlgrey  | incorrect username/password combination
+|site                                   |username  | password  | status                                 |
+|https://mydashboard.prahs.com          |clarkt42  |hatlady    | Welcome                                |
+|https://mydashboard.prahs.com          |teaglass  |earlgrey   | Welcome                                |
+|https://mydashboard.prahs.com          |          | earlgrey  | specify username                       |
+|https://mydashboard.prahs.com          |teaglass  |           | specify password                       |
+|https://mydashboard.prahs.com          |clarkt42  | earlgrey  | incorrect username/password combination|
