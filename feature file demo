@@ -1,4 +1,4 @@
-Scenario Outline: Login to Tableau Server
+Feature: Login to Tableau Server
 Given that the user is on <site>
 And a  <username> and <password> combination is input
 And the user clicks 'Ok'
