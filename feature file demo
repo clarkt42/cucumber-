@@ -1,0 +1,13 @@
+Scenario Outline: Login to Tableau Server
+Given that the user is on (.*)
+And a  <username> and <password> combination is input
+And the user clicks 'Ok'
+Then I should see <status>
+
+Examples:
+username  | password  | status
+clarkt42  |hatlady    | Welcome
+teaglass  |earlgrey   | Welcome
+          | earlgrey  | specify username
+teaglass  |           | specify password
+clarkt42  | earlgrey  | incorrect username/password combination
