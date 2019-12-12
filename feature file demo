@@ -1,13 +1,13 @@
 Scenario Outline: Login to Tableau Server
-Given that the user is on (.*)
+Given that the user is on <site>
 And a  <username> and <password> combination is input
 And the user clicks 'Ok'
 Then I should see <status>
 
 Examples:
-username  | password  | status
-clarkt42  |hatlady    | Welcome
-teaglass  |earlgrey   | Welcome
-          | earlgrey  | specify username
-teaglass  |           | specify password
-clarkt42  | earlgrey  | incorrect username/password combination
+site                                   |username  | password  | status
+https://mydashboard.prahs.com          |clarkt42  |hatlady    | Welcome
+https://mydashboard.prahs.com          |teaglass  |earlgrey   | Welcome
+https://mydashboard.prahs.com          |          | earlgrey  | specify username
+https://mydashboard.prahs.com          |teaglass  |           | specify password
+https://mydashboard.prahs.com          |clarkt42  | earlgrey  | incorrect username/password combination
